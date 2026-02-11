@@ -10,11 +10,7 @@
     --font-ui: 'Rajdhani', sans-serif;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
     background-color: var(--bg-dark);
@@ -23,113 +19,71 @@ body {
     font-family: var(--font-ui);
     height: 100vh;
     overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: flex; justify-content: center; align-items: center;
 }
 
 /* ========================
    2. LOADER
    ======================== */
 #loader-overlay {
-    position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: #000;
-    z-index: 9999;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: #000; z-index: 9999;
+    display: flex; justify-content: center; align-items: center;
     transition: opacity 1s ease-out;
 }
-
 .loader-content { text-align: center; }
-
 #loader-text {
-    font-family: var(--font-title);
-    font-size: 2.5rem;
-    color: var(--gold);
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    text-shadow: 0 0 20px var(--fire-orange);
-    margin-bottom: 20px;
+    font-family: var(--font-title); font-size: 2.5rem; color: var(--gold);
+    text-transform: uppercase; letter-spacing: 2px;
+    text-shadow: 0 0 20px var(--fire-orange); margin-bottom: 20px;
 }
-
 .loader-line {
-    width: 0;
-    height: 4px;
-    background: var(--fire-orange);
-    margin: 0 auto;
-    box-shadow: 0 0 10px var(--fire-orange);
-    animation: loadLine 2s forwards ease-in-out;
+    width: 0; height: 4px; background: var(--fire-orange); margin: 0 auto;
+    box-shadow: 0 0 10px var(--fire-orange); animation: loadLine 2s forwards ease-in-out;
 }
-
 @keyframes loadLine { to { width: 100%; } }
 .fade-out { opacity: 0; pointer-events: none; }
 
 /* ========================
    3. BACKGROUND FX
    ======================== */
-#sparks-container {
-    position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
-    z-index: 1;
-    pointer-events: none;
-}
-
+#sparks-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none; }
 .spark {
-    position: absolute;
-    width: 3px; height: 3px;
-    background: var(--gold);
-    border-radius: 50%;
-    opacity: 0;
-    box-shadow: 0 0 5px var(--fire-orange);
+    position: absolute; width: 3px; height: 3px; background: var(--gold);
+    border-radius: 50%; opacity: 0; box-shadow: 0 0 5px var(--fire-orange);
     animation: riseUp linear infinite;
 }
-
 @keyframes riseUp {
     0% { transform: translateY(110vh) scale(0.5); opacity: 0; }
     20% { opacity: 1; }
     80% { opacity: 0.8; }
     100% { transform: translateY(-10vh) scale(1.2); opacity: 0; }
 }
-
 .vignette {
-    position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
     background: radial-gradient(circle, transparent 40%, rgba(0,0,0,0.8) 100%);
-    z-index: 2;
-    pointer-events: none;
+    z-index: 2; pointer-events: none;
 }
 
 /* ========================
-   4. LAYOUT & CONTENT
+   4. LAYOUT
    ======================== */
 .content-wrapper {
-    position: relative;
-    z-index: 10;
-    text-align: center;
-    width: 100%;
-    max-width: 1200px;
-    padding: 20px;
+    position: relative; z-index: 10; text-align: center;
+    width: 100%; max-width: 1200px; padding: 20px;
 }
-
 .main-title {
-    font-family: var(--font-title);
-    font-size: 6rem;
-    text-transform: uppercase;
-    line-height: 0.9;
-    margin-bottom: 15px;
+    font-family: var(--font-title); font-size: 6rem; text-transform: uppercase;
+    line-height: 0.9; margin-bottom: 15px;
     background: linear-gradient(to bottom, #fff 0%, #ffae00 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    filter: drop-shadow(0 4px 0 #8b0000);
-    transform: skewX(-5deg);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 4px 0 #8b0000); transform: skewX(-5deg);
 }
-
 .highlight-c { color: var(--fire-orange); -webkit-text-fill-color: var(--fire-orange); }
-.highlight-20 { font-size: 7rem; color: var(--gold); -webkit-text-fill-color: var(--gold); text-shadow: 0 0 20px rgba(255, 215, 0, 0.5); }
-
+.highlight-20 {
+    font-size: 7rem; color: var(--gold); -webkit-text-fill-color: var(--gold);
+    text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+}
 .tagline {
     font-size: 1.5rem; color: var(--ember); letter-spacing: 3px;
     text-transform: uppercase; font-weight: 700; text-shadow: 0 2px 4px #000;
@@ -137,10 +91,9 @@ body {
 }
 
 /* ========================
-   5. CARDS & BUTTONS
+   5. BUTTONS
    ======================== */
 .menu-grid { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
-
 .dabang-card {
     background: rgba(0,0,0,0.6); border: 2px solid #555; padding: 30px 50px;
     text-decoration: none; color: white; transition: 0.3s;
@@ -148,11 +101,9 @@ body {
 }
 .card-label { font-size: 1rem; color: var(--ember); letter-spacing: 2px; }
 .card-title { font-family: var(--font-title); font-size: 2.5rem; }
-
 .dabang-card:hover { border-color: var(--fire-orange); transform: translateY(-5px); box-shadow: 0 10px 30px rgba(255, 69, 0, 0.3); }
 .gold-card:hover { border-color: var(--gold); box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3); }
 
-/* Buttons */
 .controls { display: flex; gap: 20px; justify-content: center; margin-bottom: 30px; }
 .btn {
     font-family: var(--font-title); font-size: 1.5rem; padding: 10px 40px;
@@ -163,37 +114,83 @@ body {
 .btn-outline { background: transparent; border: 2px solid white; }
 .btn-danger { background: #8b0000; }
 .btn-gold { background: var(--gold); color: black; }
-
 .back-link { color: #888; text-decoration: none; letter-spacing: 2px; transition: 0.3s; }
 .back-link:hover { color: var(--gold); }
 
 /* ========================
-   6. TIMER & ROUNDS
+   6. TIMER STYLES
    ======================== */
 .round-header { margin-bottom: 40px; }
 .sub-heading { color: #888; letter-spacing: 4px; font-size: 1.2rem; }
-.round-title { font-family: var(--font-title); font-size: 4rem; text-transform: uppercase; border-bottom: 3px solid var(--fire-orange); display: inline-block; }
+.round-title {
+    font-family: var(--font-title); font-size: 4rem; text-transform: uppercase;
+    border-bottom: 3px solid var(--fire-orange); display: inline-block;
+}
 .text-gold { color: var(--gold); border-color: var(--gold); }
 
 .timer-display-box {
     background: rgba(0,0,0,0.4); border: 2px solid #333; padding: 20px 0;
     margin-bottom: 40px; box-shadow: inset 0 0 50px #000;
 }
-#timer {
-    font-family: var(--font-title); font-size: 10rem; line-height: 1;
-    color: #eee; text-shadow: 0 5px 10px #000;
+
+#timer-inputs {
+    display: flex; justify-content: center; align-items: center;
 }
 
-.warning { color: var(--gold) !important; text-shadow: 0 0 20px var(--gold) !important; }
-.danger { color: var(--fire-orange) !important; animation: pulse 1s infinite; }
-.time-up { color: #fff !important; animation: shake 0.5s infinite; }
+/* FIXED INPUT STYLE - Looks like text */
+.big-input {
+    background: transparent;
+    border: none;
+    color: #eee;
+    font-family: var(--font-title);
+    font-size: 10rem;
+    width: 2ch;
+    text-align: center;
+    line-height: 1;
+    text-shadow: 0 5px 10px #000;
+    padding: 0; margin: 0;
+    outline: none;
+}
 
-@keyframes pulse { 50% { opacity: 0.6; } }
+.big-input:focus {
+    border-bottom: 2px solid #555;
+}
+
+.colon {
+    font-family: var(--font-title);
+    font-size: 8rem;
+    color: #888;
+    margin: 0 5px;
+    padding-bottom: 20px;
+    user-select: none;
+}
+
+#timer-message {
+    font-family: var(--font-title);
+    font-size: 8rem;
+    color: #fff;
+    text-shadow: 0 0 20px var(--fire-orange);
+    animation: shake 0.5s infinite;
+}
+.hidden { display: none; }
+
+/* NEW DANGER ANIMATION (Last 10 seconds)
+   Blinks Red and White. NO GLOW. */
+.danger {
+    animation: blinkRedWhite 0.5s infinite;
+    text-shadow: none !important;
+}
+
+@keyframes blinkRedWhite {
+    0% { color: #ff0000; }   /* Red */
+    50% { color: #ffffff; }  /* White */
+    100% { color: #ff0000; } /* Red */
+}
+
 @keyframes shake { 0%, 100% { transform: translateX(0); } 25% { transform: translateX(-5px); } 75% { transform: translateX(5px); } }
 
-/* Mobile Optimization */
 @media (max-width: 768px) {
-    .main-title { font-size: 3.5rem; }
-    .highlight-20 { font-size: 4rem; }
-    #timer { font-size: 18vw; }
+    .main-title { font-size: 3.5rem; } .highlight-20 { font-size: 4rem; }
+    .big-input { font-size: 18vw; } .colon { font-size: 15vw; }
+    #timer-message { font-size: 15vw; }
 }

@@ -19,7 +19,14 @@
         </header>
 
         <div class="timer-display-box">
-            <div id="timer">01:20:00</div>
+            <div id="timer-inputs">
+                <input type="text" id="t-hour" value="01" maxlength="2" class="big-input">
+                <span class="colon">:</span>
+                <input type="text" id="t-min" value="20" maxlength="2" class="big-input">
+                <span class="colon">:</span>
+                <input type="text" id="t-sec" value="00" maxlength="2" class="big-input">
+            </div>
+            <div id="timer-message" class="hidden">TIME UP!</div>
         </div>
 
         <div class="controls">
