@@ -162,6 +162,7 @@ body {
     color: #888;
     margin: 0 5px;
     padding-bottom: 20px;
+    -webkit-user-select: none;
     user-select: none;
 }
 
@@ -193,4 +194,64 @@ body {
     .main-title { font-size: 3.5rem; } .highlight-20 { font-size: 4rem; }
     .big-input { font-size: 18vw; } .colon { font-size: 15vw; }
     #timer-message { font-size: 15vw; }
+}
+
+/* ========================
+   ROUND TITLE (REVERTED TO SIMPLE)
+   ======================== */
+
+.round-title {
+    /* Base Font Style */
+    font-family: var(--font-title);
+    font-size: 4rem;
+    text-transform: uppercase;
+    line-height: 1;
+    color: #fff;
+    
+    /* Simple Layout (No Box, No Background) */
+    display: inline-block;
+    margin-bottom: 30px;
+    padding-bottom: 5px;
+    
+    /* The only decoration: Bottom Border */
+    border-bottom: 3px solid var(--fire-orange);
+    
+    /* Resetting previous 'plate' styles */
+    background: none;
+    box-shadow: none;
+    border-radius: 0;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
+/* Remove the shine animation */
+.round-title::after {
+    display: none;
+}
+
+/* TYPOGRAPHY TWEAKS (Visual Weight) */
+.title-light {
+    font-family: var(--font-ui); /* Using the UI font (Rajdhani) makes it look lighter/cleaner */
+    font-weight: 500;
+    color: #ccc; /* Slightly dimmer */
+    letter-spacing: 2px;
+    margin-right: 10px;
+}
+
+.title-heavy {
+    font-family: var(--font-title); /* Anton is naturally heavy */
+    font-weight: 400; /* Anton only has 400, but it looks bold */
+    color: #fff;
+    letter-spacing: 1px;
+    /* Subtle shadow to add "visual weight" without changing font */
+    text-shadow: 2px 2px 0px rgba(0,0,0,0.5);
+}
+
+/* Round 2 Gold Color Override */
+.text-gold {
+    border-color: var(--gold);
+}
+.text-gold .title-heavy {
+    color: var(--gold);
 }
